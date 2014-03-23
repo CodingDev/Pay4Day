@@ -1,0 +1,41 @@
+name: Pay4Day
+main: de.CodingDev.Pay4Day.Pay4Day
+version: 4.0
+author: R3N3PDE
+authors: [CodingDev, eprimex]
+depend: [Vault]
+commands:
+  pay4day:
+    description: Buy the day, night, sun, rain or storm.
+    usage: /<command>
+  pay4night:
+    description: Buy the night.
+    usage: /<command>
+  pay4sun:
+    description: Buy the sun.
+    usage: /<command>
+  pay4rain:
+    description: Buy the rain.
+    usage: /<command>
+  pay4storm:
+    description: Buy the storm.
+    usage: /<command>
+permissions:
+    pay4day.use.classic:
+        description: Allows you to use Pay4Day.
+        default: false
+    pay4day.use.day:
+        description: Allows you to use Pay4Day.
+        default: false
+    pay4day.use.night:
+        description: Allows you to use Pay4Day.
+        default: false
+    pay4day.use.sun:
+        description: Allows you to use Pay4Day.
+        default: false
+    pay4day.use.rain:
+        description: Allows you to use Pay4Day.
+        default: false
+    pay4day.use.storm:
+        description: Allows you to use Pay4Day.
+        default: false

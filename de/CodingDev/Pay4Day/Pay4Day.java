@@ -1,5 +1,6 @@
 package de.CodingDev.Pay4Day;
 
+import java.io.File;
 import java.io.IOException;
 
 import net.milkbowl.vault.economy.Economy;
@@ -16,6 +17,7 @@ import de.CodingDev.Pay4Day.org.mcstats.Metrics;
 
 public class Pay4Day extends JavaPlugin{
 	String prefix = ChatColor.GREEN + "[Pay4Day] ";
+	public File configFile = new File(this.getDataFolder(), "config.yml");
 	
 	public static Economy econ = null;
 	
@@ -30,11 +32,13 @@ public class Pay4Day extends JavaPlugin{
 			return;
 		}
 		getLogger().info("Pay4Day has been enabled!");
-		getLogger().warning("We have new config.yml options & language Settings!!!");
+		getLogger().warning("We have new config.yml! If you use older version than 4.0 PLEASE REMOVE OLD CONFIG.YML");
+		loadConfig();
 		getLogger().info("-------------------------");
-		getLogger().info("By: R3N3PDE");
+		getLogger().info("By: R3N3PDE. New developer Eprimex");
 		getLogger().info("Website: http://codingdev.de/");
 		getLogger().info("Website: http://r3n3p.de/");
+		getLogger().info("Eprimex's website: http://rautamiekka.org");
 		getLogger().info("Updates: http://dev.bukkit.org/server-mods/pay4day/");
 		getLogger().info("Version: " + getDescription().getVersion());
 		getLogger().info("-------------------------");
@@ -172,6 +176,10 @@ public class Pay4Day extends JavaPlugin{
 	}
 
 	private void loadConfig(){
+		if (!configFile.exists()) {
+			getLogger().info("Config didn't exist. Creating new");
+			getConfig().options().copyDefaults(true);
+		}
 		getConfig().addDefault("config.price.classic", 100.0);
 		getConfig().addDefault("config.price.day", 100.0);
 		getConfig().addDefault("config.price.night", 100.0);
@@ -192,19 +200,19 @@ public class Pay4Day extends JavaPlugin{
 		
 		/*------------------------ ENGLISH -------------------------------*/
 		
-		getConfig().addDefault("msg.en.surcces_msg_classic", "Successfully turned day and sun.");
-		getConfig().addDefault("msg.en.surcces_msg_day", "Successfully turned day.");
-		getConfig().addDefault("msg.en.surcces_msg_night", "Successfully turned night.");
-		getConfig().addDefault("msg.en.surcces_msg_sun", "Successfully turned sun.");
-		getConfig().addDefault("msg.en.surcces_msg_rain", "Successfully turned rain.");
-		getConfig().addDefault("msg.en.surcces_msg_storm", "Successfully turned storm.");
+		getConfig().addDefault("msg.en.surcces_msg_classic", "Successfully set day and sun.");
+		getConfig().addDefault("msg.en.surcces_msg_day", "Successfully set day.");
+		getConfig().addDefault("msg.en.surcces_msg_night", "Successfully set night.");
+		getConfig().addDefault("msg.en.surcces_msg_sun", "Successfully set sun.");
+		getConfig().addDefault("msg.en.surcces_msg_rain", "Successfully set rain.");
+		getConfig().addDefault("msg.en.surcces_msg_storm", "Successfully set storm.");
 		
-		getConfig().addDefault("msg.en.broadcast_classic", "%player% spent %price% %currency% for it to be day and sun.");
-		getConfig().addDefault("msg.en.broadcast_day", "%player% spent %price% %currency% for it to be day.");
-		getConfig().addDefault("msg.en.broadcast_night", "%player% spent %price% %currency% for it to be night.");
-		getConfig().addDefault("msg.en.broadcast_sun", "%player% spent %price% %currency% for it to be sun.");
-		getConfig().addDefault("msg.en.broadcast_rain", "%player% spent %price% %currency% for it to be rain.");
-		getConfig().addDefault("msg.en.broadcast_storm", "%player% spent %price% %currency% for it to be storm.");
+		getConfig().addDefault("msg.en.broadcast_classic", "%player% spent %price% %currency% for day and sun.");
+		getConfig().addDefault("msg.en.broadcast_day", "%player% spent %price% %currency% for day.");
+		getConfig().addDefault("msg.en.broadcast_night", "%player% spent %price% %currency% for night.");
+		getConfig().addDefault("msg.en.broadcast_sun", "%player% spent %price% %currency% for sun.");
+		getConfig().addDefault("msg.en.broadcast_rain", "%player% spent %price% %currency% for rain.");
+		getConfig().addDefault("msg.en.broadcast_storm", "%player% spent %price% %currency% for storm.");
 		
 		
 		
@@ -236,7 +244,7 @@ public class Pay4Day extends JavaPlugin{
 		getConfig().addDefault("msg.de.permissions", "Du hast nicht die Permissions für diesen Befehl.");
 		getConfig().addDefault("msg.de.cmd_command", "Nur Spieler können diesen Befehl benutzen.");
 		
-		getConfig().options().copyDefaults(true);
+		//getConfig().options().copyDefaults(true);
 		saveConfig();
 	}
 }

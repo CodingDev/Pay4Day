@@ -1,6 +1,6 @@
 name: Pay4Day
 main: de.CodingDev.Pay4Day.Pay4Day
-version: 4.0
+version: 4.1
 author: R3N3PDE
 authors: [CodingDev, eprimex]
 depend: [Vault]

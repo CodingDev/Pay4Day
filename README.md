@@ -5,7 +5,7 @@ With Pay4Day it is possible that the players pay money for day, night, sun, rain
 
 Pay4Day on Bukkit: https://dev.bukkit.org/projects/pay4day
 
-# Commands
+## Commands
 
 * /pay4day
 * /pay4night
@@ -13,7 +13,7 @@ Pay4Day on Bukkit: https://dev.bukkit.org/projects/pay4day
 * /pay4rain
 * /pay4storm
 
-# Permissions
+## Permissions
 
 * pay4day.use.classic
 * pay4day.use.day
@@ -22,6 +22,6 @@ Pay4Day on Bukkit: https://dev.bukkit.org/projects/pay4day
 * pay4day.use.rain
 * pay4day.use.storm
 
-# Requirements
+## Requirements
 
 * [Vault](https://dev.bukkit.org/projects/vault) >= 1.6

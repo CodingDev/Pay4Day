@@ -1,9 +1,8 @@
-name: Pay4Day
-main: de.CodingDev.Pay4Day.Pay4Day
-version: 4.1
-author: R3N3PDE
-authors: [CodingDev, eprimex]
-depend: [Vault]
+name: ${project.name}
+main: io.preuss.pay4day.Pay4Day
+version: ${project.version}
+authors: [GhostZero_, R3N3PDE, eprimex]
+softdepend: [Vault]
 commands:
   pay4day:
     description: Buy the day, night, sun, rain or storm.
